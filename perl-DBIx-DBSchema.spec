@@ -1,6 +1,6 @@
 %define module	DBIx-DBSchema
 %define name	perl-%{module}
-%define version 0.33
+%define version 0.34
 %define release %mkrel 1
 
 Name:		%{name}
@@ -9,11 +9,8 @@ Release:	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
 Summary:	Database-independent schema objects
-Source:		http://search.cpan.org/CPAN/authors/id/I/IV/IVAN/%{module}-%{version}.tar.bz2
 Url:		http://search.cpan.org/dist/%{module}
-%if %{mdkversion} < 1010
-BuildRequires:	perl-devel
-%endif
+Source:     http://www.cpan.org/modules/by-module/DBIx/%{module}-%{version}.tar.gz
 BuildRequires:  perl-DBI
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}
