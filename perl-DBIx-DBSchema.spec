@@ -13,6 +13,7 @@ Url:		http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/DBIx/%{module}-%{version}.tar.gz
 BuildRequires:  perl-DBI
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 DBIx::DBSchema objects are collections of DBIx::DBSchema::Table objects and 
