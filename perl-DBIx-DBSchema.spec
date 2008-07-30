@@ -1,7 +1,7 @@
 %define module	DBIx-DBSchema
 %define name	perl-%{module}
 %define version 0.36
-%define release %mkrel 1
+%define release %mkrel 3
 
 Name:		%{name}
 Version:	%{version}
