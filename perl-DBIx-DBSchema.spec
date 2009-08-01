@@ -1,19 +1,19 @@
-%define module	DBIx-DBSchema
-%define name	perl-%{module}
-%define version 0.36
-%define release %mkrel 3
+%define upstream_name	 DBIx-DBSchema
+%define upstream_version 0.36
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
-License:	GPL or Artistic
-Group:		Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:	Database-independent schema objects
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/DBIx/%{module}-%{version}.tar.gz
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/DBIx/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:  perl-DBI
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 DBIx::DBSchema objects are collections of DBIx::DBSchema::Table objects and 
@@ -30,7 +30,7 @@ syntax for other databases. Assistance adding support for other databases
 is welcomed. See DBIx::DBSchema::DBD, "Driver Writer's Guide and Base Class".
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -51,5 +51,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{perl_vendorlib}/DBIx
 %{_mandir}/man3/*
-
-
