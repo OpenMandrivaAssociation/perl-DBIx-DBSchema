@@ -1,15 +1,13 @@
 %define upstream_name	 DBIx-DBSchema
-%define upstream_version 0.47
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.47
+Release:	2
 
 Summary:	Database-independent schema objects
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/DBIx-DBSchema
-Source0:	https://cpan.metacpan.org/authors/id/I/IV/IVAN/DBIx-DBSchema-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/I/IV/IVAN/DBIx-DBSchema-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -31,7 +29,7 @@ syntax for other databases. Assistance adding support for other databases
 is welcomed. See DBIx::DBSchema::DBD, "Driver Writer's Guide and Base Class".
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -65,9 +63,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.360.0-1mdv2010.0
 + Revision: 405960
-- rebuild using %%perl_convert_version
-
-* Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.36-3mdv2009.0
+- rebuild using %0.47 Thu Jul 31 2008 Thierry Vignaud <tv@mandriva.org> 0.36-3mdv2009.0
 + Revision: 256586
 - rebuild
 
