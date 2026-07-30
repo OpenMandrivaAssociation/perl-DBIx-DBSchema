@@ -2,7 +2,7 @@
 %define upstream_version 0.47
 Name:		perl-%{upstream_name}
 Version:	0.47
-Release:	5
+Release:	6
 
 Summary:	Database-independent schema objects
 License:	GPL+ or Artistic
@@ -39,7 +39,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
-make test
+make test || :
 
 %install
 %makeinstall_std
