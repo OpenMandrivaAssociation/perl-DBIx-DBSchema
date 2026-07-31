@@ -2,7 +2,7 @@
 %define upstream_version 0.47
 Name:		perl-%{upstream_name}
 Version:	0.47
-Release:	6
+Release:	7
 
 Summary:	Database-independent schema objects
 License:	GPL+ or Artistic
