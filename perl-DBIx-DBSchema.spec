@@ -2,7 +2,7 @@
 %define upstream_version 0.47
 Name:		perl-%{upstream_name}
 Version:	0.47
-Release:	8
+Release:	9
 
 Summary:	Database-independent schema objects
 License:	GPL+ or Artistic
@@ -13,6 +13,7 @@ Source0:	https://cpan.metacpan.org/authors/id/I/IV/IVAN/DBIx-DBSchema-0.47.tar.g
 BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(DBI)
+BuildRequires:	perl(Test::More)
 BuildArch:	noarch
 
 %description
@@ -44,6 +45,8 @@ make test || :
 %install
 %makeinstall_std
 
+find %{buildroot} -type f -name '*.pm' -exec chmod -x {} +
+if [ -d %{buildroot}%{_bindir} ]; then find %{buildroot}%{_bindir} -type f -exec chmod 755 {} +; fi
 %files
 %doc Changes README
 %{perl_vendorlib}/DBIx
